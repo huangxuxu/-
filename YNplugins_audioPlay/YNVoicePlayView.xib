@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YNVoicePlayView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1U-lz-9PA" userLabel="底部条">
+                    <rect key="frame" x="20" y="232" width="374" height="60"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sRc-tb-KMt">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVu-5S-f0u" userLabel="more">
+                            <rect key="frame" x="7" y="0.0" width="40" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="plr-rD-k1r"/>
+                            </constraints>
+                            <state key="normal" image="voiceplayImage.png"/>
+                            <connections>
+                                <action selector="playOrPauseAction" destination="iN0-l3-epB" eventType="touchUpInside" id="4OB-AC-5ax"/>
+                            </connections>
+                        </button>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-uA-I84">
+                            <rect key="frame" x="45" y="25" width="263" height="11"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="rTn-Qe-inb"/>
+                            </constraints>
+                            <color key="minimumTrackTintColor" red="0.070588235289999995" green="0.70980392160000005" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="maximumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="thumbTintColor" red="0.070588235289999995" green="0.70980392160000005" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dragProgressAction:" destination="iN0-l3-epB" eventType="valueChanged" id="KEN-Yn-Mz0"/>
+                            </connections>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6i-6X-RVM">
+                            <rect key="frame" x="306" y="24.5" width="60" height="11"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="KE0-4X-djb"/>
+                                <constraint firstAttribute="height" constant="11" id="Wc9-ok-IgL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="sRc-tb-KMt" secondAttribute="trailing" id="0sl-aE-RI3"/>
+                        <constraint firstAttribute="bottom" secondItem="yVu-5S-f0u" secondAttribute="bottom" id="B62-if-QVA"/>
+                        <constraint firstItem="sRc-tb-KMt" firstAttribute="top" secondItem="N1U-lz-9PA" secondAttribute="top" id="HDk-qD-C1g"/>
+                        <constraint firstAttribute="trailing" secondItem="m6i-6X-RVM" secondAttribute="trailing" constant="8" id="LdI-Wa-Pfe"/>
+                        <constraint firstItem="gw5-uA-I84" firstAttribute="leading" secondItem="yVu-5S-f0u" secondAttribute="trailing" id="O7Y-Kw-Xcg"/>
+                        <constraint firstItem="yVu-5S-f0u" firstAttribute="leading" secondItem="N1U-lz-9PA" secondAttribute="leading" constant="7" id="TTt-V1-hym"/>
+                        <constraint firstItem="m6i-6X-RVM" firstAttribute="centerY" secondItem="sRc-tb-KMt" secondAttribute="centerY" id="ehn-2Z-s9Q"/>
+                        <constraint firstItem="m6i-6X-RVM" firstAttribute="leading" secondItem="gw5-uA-I84" secondAttribute="trailing" id="gi8-zg-fGH"/>
+                        <constraint firstAttribute="bottom" secondItem="sRc-tb-KMt" secondAttribute="bottom" id="hqy-rV-FDt"/>
+                        <constraint firstItem="sRc-tb-KMt" firstAttribute="leading" secondItem="N1U-lz-9PA" secondAttribute="leading" id="je9-yH-n1h"/>
+                        <constraint firstItem="yVu-5S-f0u" firstAttribute="top" secondItem="N1U-lz-9PA" secondAttribute="top" id="o4Z-c0-YRv"/>
+                        <constraint firstItem="gw5-uA-I84" firstAttribute="centerY" secondItem="sRc-tb-KMt" secondAttribute="centerY" id="qeC-5L-s1x"/>
+                        <constraint firstAttribute="height" constant="60" id="vA7-AI-5X3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="N1U-lz-9PA" secondAttribute="trailing" constant="20" id="4e5-T1-6u5"/>
+                <constraint firstItem="N1U-lz-9PA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5zV-6b-EJM"/>
+                <constraint firstItem="N1U-lz-9PA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="UoQ-rM-n9x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backMainView" destination="N1U-lz-9PA" id="L1P-Fy-uBS"/>
+                <outlet property="playBtn" destination="yVu-5S-f0u" id="ejG-fo-6Rf"/>
+                <outlet property="progressSlider" destination="gw5-uA-I84" id="WfN-5C-zRz"/>
+                <outlet property="totalTimeLabel" destination="m6i-6X-RVM" id="9E9-7r-Lt9"/>
+            </connections>
+            <point key="canvasLocation" x="-164" y="-32"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="voiceplayImage.png" width="20" height="20"/>
+    </resources>
+</document>
